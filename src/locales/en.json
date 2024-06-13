@@ -1,0 +1,30 @@
+{
+    "navbar": {
+        "status": {
+            "online": "online",
+            "brb": "be right back",
+            "disturb": "please don't disturb",
+            "offline": "offline",
+            "title": "Change status"
+        },
+        "searchInputPlaceholder": "Search..."
+    },
+    "messages": {
+        "onlinePanelTitle": "Online",
+        "messagesPanelTitle": "Messages",
+        "chatPanel": {
+            "inputPlaceholder": "Type a message...",
+            "recordMessageTooltip": "Record a message",
+            "sendImageTooltip": "Send an image",
+            "sendGiftTooltip": "Send a gift",
+            "likeTooltip": "Send a like"
+        }
+    },
+    "notifications": {
+        "type": {
+            "message": "sent you a message.",
+            "groupInvite": "invites you to group ",
+            "nameChange": "have new name now: "
+        }
+    }
+}

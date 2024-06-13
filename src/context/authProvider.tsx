@@ -21,9 +21,9 @@ interface AuthProviderProps {
 export const AuthProvider: React.FC<AuthProviderProps> = ({children, fallback}) => {
     const [ token, setToken ] = useState<string>("");
 
-    if(token == ""){
+/*     if(token == ""){
         return <>{fallback}</>
-    }
+    } */
 
     return (
         <AuthContext.Provider value={{ token, setToken }}>

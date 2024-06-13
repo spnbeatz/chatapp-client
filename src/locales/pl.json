@@ -1,0 +1,30 @@
+{
+    "navbar": {
+        "status": {
+            "online": "dostępny",
+            "brb": "zaraz wracam",
+            "disturb": "nie przeszkadzać",
+            "offline": "niedostępny",
+            "title": "Zmień status"
+        },
+        "searchInputPlaceholder": "Szukaj..."
+    },
+    "messages": {
+        "onlinePanelTitle": "Dotępni",
+        "messagesPanelTitle": "Konwersacje",
+        "chatPanel": {
+            "inputPlaceholder": "Napisz wiadomość...",
+            "recordMessageTooltip": "Nagraj wiadomość głosową",
+            "sendImageTooltip": "Wyślij zdjęcie",
+            "sendGiftTooltip": "Wyślij prezent",
+            "likeTooltip": "Wyślij lajka"
+        }
+    },
+    "notifications": {
+        "type": {
+            "message": "wysłał Ci wiadomość.",
+            "groupInvite": "zaprosił Cię do grupy ",
+            "nameChange": ["Grupa", "zmieniła nazwę na: "]
+        }
+    }
+}

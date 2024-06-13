@@ -1,6 +1,8 @@
 import { Link } from "@nextui-org/link";
 
 import { Navbar } from "@/components/navbar";
+import { SideBar } from "@/components/sidebar";
+import { ThemeSwitch } from "@/components/theme-switch";
 
 export default function DefaultLayout({
   children,
@@ -9,11 +11,15 @@ export default function DefaultLayout({
 }) {
   return (
     <div className="relative flex flex-col h-screen bg-background">
-{/*       <Navbar /> */}
-      <main className="container mx-auto max-w-7xl px-6 flex-grow pt-16 ">
-        {children}
-      </main>
-      <footer className="w-full flex items-center justify-center py-3">
+      <Navbar />
+      <div className="flex flex-row justify-start relative h-full">
+        <SideBar />
+        <main className="mx-auto w-full h-full px-8 flex-grow pt-7 ">
+          {children}
+        </main>
+      </div>
+
+      <footer className="absolute bottom-0 w-full flex items-center justify-center py-3">
         <Link
           isExternal
           className="flex items-center gap-1 text-current"
