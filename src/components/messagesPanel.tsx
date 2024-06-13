@@ -18,7 +18,7 @@ export const MessagesPanel = ({setPickedMessage}: {setPickedMessage: React.Dispa
     ]
 
     return (
-        <div className="w-full rounded-md overflow-hidden shadow-medium flex flex-col pb-4">
+        <div className="w-full rounded-md overflow-hidden shadow-medium flex flex-col pb-4 h-full">
             <p className="text-white text-sm font-semibold px-6 py-4 bg-slate-800">
                 {t('messages.messagesPanelTitle')}
             </p>

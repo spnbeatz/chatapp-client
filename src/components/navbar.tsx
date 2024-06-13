@@ -53,7 +53,7 @@ export const Navbar = () => {
 
 
   return (
-    <NextUINavbar maxWidth="xl" position="sticky" className="bg-slate-800 h-24">
+    <NextUINavbar maxWidth="full" position="sticky" className="bg-slate-800 h-24">
       <NavbarContent
         className="w-screen"
         justify="center"

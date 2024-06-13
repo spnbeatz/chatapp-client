@@ -22,7 +22,7 @@ export const OnlineUsersPanel: React.FC = () => {
             <p className="text-white text-sm font-semibold px-6 py-4 bg-slate-800">
                 {t('messages.onlinePanelTitle')}
             </p>
-            <AvatarGroup isBordered max={6} className="flex w-full flex-row justify-start gap-6 pb-5 px-5 pt-3 overflow-x-scroll">
+            <AvatarGroup isBordered max={6} className="flex w-full flex-row justify-start gap-6 pb-8 px-5 pt-8 overflow-x-scroll overflow-y-hidden">
                 {avatars.map((item, index) => {
                     return (
                         <Badge content="" color="success" shape="circle" placement="bottom-left" key={index}>

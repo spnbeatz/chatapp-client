@@ -14,7 +14,7 @@ export default function DefaultLayout({
       <Navbar />
       <div className="flex flex-row justify-start relative h-full">
         <SideBar />
-        <main className="mx-auto w-full h-full px-8 flex-grow pt-7 ">
+        <main className="mx-auto w-full px-8 flex-grow pt-7">
           {children}
         </main>
       </div>

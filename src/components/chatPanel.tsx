@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { AvatarBadge } from "./avatarBadge";
-import { Call, Videocam, Settings, Mic, Images, Gift, Heart } from "react-ionicons";
+import { Call, Videocam, Settings, Mic, Images, Gift, Heart, CloseCircle } from "react-ionicons";
 import { Button } from "@nextui-org/button";
 import { Input } from "@nextui-org/input";
 import { Tooltip } from "@nextui-org/tooltip";
@@ -32,16 +32,7 @@ export const ChatPanel = ({message}: {message: string}) => {
           
           labelPlacement="outside"
           placeholder={t('messages.chatPanel.inputPlaceholder')}
-          startContent={
-            imagePreview && (
-                <Image
-                    width={50}
-                    height={50}
-                    alt="NextUI hero Image with delay"
-                    src={imagePreview}
-                />
-            )
-          }
+
 /*           startContent={
             <SearchIcon className="text-base text-default-400 pointer-events-none flex-shrink-0" />
           } */
@@ -60,12 +51,17 @@ export const ChatPanel = ({message}: {message: string}) => {
             } else {
                 setImagePreview(null);
             }
-      }, [selectedImage]);
+    }, [selectedImage]);
+
+    const cleanImagePreview = () => {
+        setImagePreview(null);
+        setSelectedImage(null);
+    }
 
     const exampleUser = {id: "1", avatar: "https://i.pravatar.cc/150?u=a04258a2462d826712d", username: "patryk"}
 
     return (
-        <div className="w-full rounded-md overflow-hidden shadow-medium flex flex-col">
+        <div className="w-full rounded-md overflow-hidden shadow-medium flex flex-col h-full">
             <div className="flex flex-row w-full justify-between px-5 items-center bg-slate-800 py-4">
                 <div className="flex flex-row justify-center items-center gap-4">
                     <AvatarBadge {...exampleUser} size={20}/>
@@ -89,12 +85,37 @@ export const ChatPanel = ({message}: {message: string}) => {
                 </div>
             </div>
             <div 
-                className="flex flex-col justify-between items-center"
-                style={{height: '571px'}}
+                className="flex flex-col justify-between items-center h-full relative"
+                
             >
                 <div className="flex flex-col-reverse justify-start items-center h-full w-full overflow-y-scroll">
 
                 </div>
+                {imagePreview && (
+                    <div className="flex flex-row justify-start items-center w-full px-4 absolute bottom-20">
+                        <div className="rounded-md shadow-md overflow-hidden relative">
+                            <div 
+                                className="absolute top-1 right-1 p-1 hover:scale-125 duration-250"
+                                style={{
+                                    zIndex: 100
+                                }}
+                                onClick={() => cleanImagePreview()}
+                            >
+                                <CloseCircle width={"18px"} height={"18px"} color="red"/>
+                            </div>
+                            <Image
+                                width={250}
+                                height={250}
+                                alt="NextUI hero Image with delay"
+                                src={imagePreview}
+                            />
+
+                        </div>
+
+                    </div>
+
+                    )
+                }
                 <form className="flex flex-row justify-between w-full px-4 gap-3 items-center py-2">
                     <div className="flex flex-row justify-center items-center gap-3">
                         <Tooltip content={t('messages.chatPanel.recordMessageTooltip')}>
