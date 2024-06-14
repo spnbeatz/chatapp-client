@@ -8,6 +8,15 @@ import { useTranslation } from "react-i18next";
 import { iconStylesInMessagesForm } from "@/styles/iconStyles";
 import { ImageInputButton } from "./imageInput";
 import {Image} from "@nextui-org/image";
+import Conv from '../assets/conv.json';
+import { useSelector } from "react-redux";
+import { RootState } from "@/redux/store";
+
+interface Interlocutor {
+    username: string,
+    avatar: string,
+    id: string
+}
 
 
 export const ChatPanel = ({message}: {message: string}) => {
@@ -16,6 +25,16 @@ export const ChatPanel = ({message}: {message: string}) => {
 
     const [ selectedImage, setSelectedImage ] = useState<File | null>(null);
     const [ imagePreview, setImagePreview ] = useState<string | null>(null);
+    const [ interlocutor, setInterlocutor ] = useState<Interlocutor | null>(null);
+
+    const userId = useSelector((state: RootState) => state.user.id);
+
+    useEffect(() => {
+        const data = Conv.membersData.filter((item) => {
+            return item.id !== userId
+        });
+        setInterlocutor(data[0]);
+    },[])
 
     const getFile = (file: File | null) => {
         setSelectedImage(file);
@@ -64,9 +83,9 @@ export const ChatPanel = ({message}: {message: string}) => {
         <div className="w-full rounded-md overflow-hidden shadow-medium flex flex-col h-full">
             <div className="flex flex-row w-full justify-between px-5 items-center bg-slate-800 py-4">
                 <div className="flex flex-row justify-center items-center gap-4">
-                    <AvatarBadge {...exampleUser} size={20}/>
+                    {interlocutor && <AvatarBadge {...interlocutor} size={20}/>}
                     <p className="text-white text-sm font-normal cursor-pointer hover:underline">
-                        {exampleUser.username}
+                        {interlocutor?.username}
                     </p>
                 </div>
                 <div className="flex flex-row justify-center items-center gap-4">

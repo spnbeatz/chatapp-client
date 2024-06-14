@@ -2,11 +2,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface User {
-    conversations: string[]
+    id: string
 }
 
 const initialState: User = {
-    conversations: []
+    id: "664b72bd968f47e560bc04f4"
 };
 
 const userSlice = createSlice({
