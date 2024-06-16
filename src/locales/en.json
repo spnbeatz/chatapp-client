@@ -11,7 +11,15 @@
     },
     "messages": {
         "onlinePanelTitle": "Online",
-        "messagesPanelTitle": "Messages",
+        "messagesPanelTitle": "Chats",
+        "messagesPanel": {
+            "messagesReadTrueTooltip": "No new messages to read.",
+            "messagesReadFalseTooltip": "Click here to set your messages as read."
+            
+        },
+        "friendsPanel": {
+            "addFriendPlaceholder": "Type #number"
+        },
         "chatPanel": {
             "inputPlaceholder": "Type a message...",
             "recordMessageTooltip": "Record a message",

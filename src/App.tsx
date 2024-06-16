@@ -11,11 +11,8 @@ import { AuthScreen } from "./auth/AuthScreen";
 function App() {
   return (
     <Routes>
-      <Route element={<IndexPage />} path="/" />
-      <Route element={<ChatPage />} path="/messages" />
-      <Route element={<PricingPage />} path="/friends" />
-      <Route element={<BlogPage />} path="/settings" />
-      <Route element={<AboutPage />} path="/about" />
+      <Route element={<ChatPage />} path="/" />
+
     </Routes>
   );
 }

@@ -16,8 +16,8 @@ export const ConversationListItem:React.FC<LastMessage> = ({id, message, user}) 
             <div className="flex flex-row items-center justify-start gap-2">
                 <AvatarBadge {...user} />
                 <div className="flex flex-col items-start justify-center">
-                    <p className="text-black dark:text-gray-400 text-sm font-semibold">{user.username}</p>
-                    <p className="text-gray-700 dark:text-gray-200 text-xs">{message.length > 15 ? message.slice(0, 15) + "..." : message} {/* {formatDate(lastMessageProps.timescamp, "chat")} */}</p>
+                    <p className="dark:text-gray-300 text-gray-300 text-sm font-semibold">{user.username}</p>
+                    <p className="text-gray-300 dark:text-gray-200 text-xs">{message.length > 15 ? message.slice(0, 15) + "..." : message} {/* {formatDate(lastMessageProps.timescamp, "chat")} */}</p>
                 </div>
             </div>
             <p className="text-gray-500 text-tiny"></p>

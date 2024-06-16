@@ -44,7 +44,7 @@ export const ChatPanel = ({message}: {message: string}) => {
         <Input
           aria-label="Search"
           classNames={{
-            inputWrapper: "flex items-center bg-slate-100 h-12 rounded-full data-[hover=true]:bg-slate-200",
+            inputWrapper: "flex items-center blurred-black-lighter rounded-full data-[hover=true]:bg-slate-200",
             input: "text-sm",
             base: "",
           }}
@@ -80,23 +80,28 @@ export const ChatPanel = ({message}: {message: string}) => {
     const exampleUser = {id: "1", avatar: "https://i.pravatar.cc/150?u=a04258a2462d826712d", username: "patryk"}
 
     return (
-        <div className="w-full rounded-md overflow-hidden shadow-medium flex flex-col h-full">
-            <div className="flex flex-row w-full justify-between px-5 items-center bg-slate-800 py-4">
+        <div 
+            className="w-full mt-4 rounded-md overflow-hidden shadow-medium flex flex-col blurred-black-lighter"
+            style={{
+                height: "97%"
+            }}
+            >
+            <div className="flex flex-row w-full justify-between px-5 items-center bg-black py-4 h-10">
                 <div className="flex flex-row justify-center items-center gap-4">
-                    {interlocutor && <AvatarBadge {...interlocutor} size={20}/>}
+                    {interlocutor && <AvatarBadge {...interlocutor} size={25}/>}
                     <p className="text-white text-sm font-normal cursor-pointer hover:underline">
                         {interlocutor?.username}
                     </p>
                 </div>
                 <div className="flex flex-row justify-center items-center gap-4">
                     <div className="hover:scale-125 duration-250">
-                        <Call width={"20px"} height={"20px"} color="white"/>
+                        <Call width={"15px"} height={"15px"} color="rgb(200,200,200)"/>
                     </div>
                     <div className="hover:scale-125 duration-250">
-                        <Videocam width={"20px"} height={"20px"} color="white"/>
+                        <Videocam width={"15px"} height={"15px"} color="rgb(200,200,200)"/>
                     </div>
                     <div className="hover:scale-125 duration-250">
-                        <Settings width={"20px"} height={"20px"} color="white"/>
+                        <Settings width={"15px"} height={"15px"} color="rgb(200,200,200)"/>
                     </div>
 
                     
@@ -107,7 +112,7 @@ export const ChatPanel = ({message}: {message: string}) => {
                 className="flex flex-col justify-between items-center h-full relative"
                 
             >
-                <div className="flex flex-col-reverse justify-start items-center h-full w-full overflow-y-scroll">
+                <div className="flex flex-col-reverse justify-start items-center h-full w-full overflow-y-scroll scrollbar2">
 
                 </div>
                 {imagePreview && (
@@ -135,7 +140,7 @@ export const ChatPanel = ({message}: {message: string}) => {
 
                     )
                 }
-                <form className="flex flex-row justify-between w-full px-4 gap-3 items-center py-2">
+                <form className="flex flex-row justify-between w-full px-4 gap-3 items-center blurred-black-darker">
                     <div className="flex flex-row justify-center items-center gap-3">
                         <Tooltip content={t('messages.chatPanel.recordMessageTooltip')}>
                             <button className="bg-transparent hover:scale-125 duration-250" type="button">      

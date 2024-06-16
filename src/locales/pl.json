@@ -11,7 +11,14 @@
     },
     "messages": {
         "onlinePanelTitle": "Dotępni",
-        "messagesPanelTitle": "Konwersacje",
+        "messagesPanelTitle": "Czaty",
+        "messagesPanel": {
+            "messagesReadTrueTooltip": "Nie nieprzeczytanych wiadomości",
+            "messagesReadFalseTooltip": "Oznacz wszystkie jako przeczytane"
+        },
+        "friendsPanel": {
+            "addFriendPlaceholder": "Wpisz #numer"
+        },
         "chatPanel": {
             "inputPlaceholder": "Napisz wiadomość...",
             "recordMessageTooltip": "Nagraj wiadomość głosową",

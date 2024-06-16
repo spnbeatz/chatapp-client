@@ -11,14 +11,10 @@ export const ChatPage: React.FC = () => {
     return (
         <DefaultLayout>
 
-            <div className="w-full flex flex-row justify-between gap-8 h-full pb-14">
-                <section className="w-2/5 gap-4 flex flex-col items-center h-full">
-                    <OnlineUsersPanel />
-                    <MessagesPanel setPickedMessage={setPickedMessage}/>
-                </section>
-                <section className="w-3/5 h-full">
-                    <ChatPanel message={pickedMessage} />
-                </section>
+            <div className="w-full flex flex-row justify-between h-full gap-4">
+                <OnlineUsersPanel />
+                <MessagesPanel setPickedMessage={setPickedMessage}/>
+                <ChatPanel message={pickedMessage} />
 
             </div>
 

@@ -14,7 +14,6 @@ export const AvatarBadge: React.FC<LastMessageUser> = ({id, username, avatar, si
             key={id}
         >
             <Avatar 
-                isBordered
                 src={avatar} 
                 className="cursor-pointer"
                 style={{

@@ -11,15 +11,15 @@ export default function DefaultLayout({
 }) {
   return (
     <div className="relative flex flex-col h-screen bg-background">
-      <Navbar />
+{/*       <Navbar /> */}
       <div className="flex flex-row justify-start relative h-full">
-        <SideBar />
-        <main className="mx-auto w-full px-8 flex-grow pt-7">
+{/*         <SideBar /> */}
+        <main className="mx-auto w-full flex-grow h-full">
           {children}
         </main>
       </div>
 
-      <footer className="absolute bottom-0 w-full flex items-center justify-center py-3">
+{/*       <footer className="absolute bottom-0 w-full flex items-center justify-center py-3">
         <Link
           isExternal
           className="flex items-center gap-1 text-current"
@@ -29,7 +29,7 @@ export default function DefaultLayout({
           <span className="text-default-600">Powered by</span>
           <p className="text-primary">NextUI</p>
         </Link>
-      </footer>
+      </footer> */}
     </div>
   );
 }

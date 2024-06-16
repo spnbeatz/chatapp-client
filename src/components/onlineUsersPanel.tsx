@@ -3,6 +3,7 @@ import { Avatar, AvatarGroup } from "@nextui-org/avatar";
 import { Badge } from "@nextui-org/badge";
 import {Tooltip} from "@nextui-org/tooltip";
 import { useTranslation } from "react-i18next";
+import { LogoWebComponent } from "react-ionicons";
 
 export const OnlineUsersPanel: React.FC = () => {
 
@@ -18,14 +19,18 @@ export const OnlineUsersPanel: React.FC = () => {
     ]
 
     return (
-        <div className="w-full rounded-md overflow-hidden shadow-medium flex flex-col gap-4">
-            <p className="text-white text-sm font-semibold px-6 py-4 bg-slate-800">
-                {t('messages.onlinePanelTitle')}
-            </p>
-            <AvatarGroup isBordered max={6} className="flex w-full flex-row justify-start gap-6 pb-8 px-5 pt-8 overflow-x-scroll overflow-y-hidden">
+        <div className="overflow-hidden items-center w-28 pt-5 pb-5 h-full flex flex-col gap-4 bg-black shadow-medium">
+            <LogoWebComponent width={"40px"} height={"40px"} color={"white"}/>
+            <AvatarGroup 
+                
+                max={6} 
+                className="flex ml-2 mt-3 w-full flex-col justify-start items-center gap-6 pb-8 pt-8 overflow-y-scroll overflow-x-hidden scrollbar-hide"
+                
+                >
+                
                 {avatars.map((item, index) => {
                     return (
-                        <Badge content="" color="success" shape="circle" placement="bottom-left" key={index}>
+                        <Badge content="" color="success" size="sm" shape="circle" placement="bottom-left" key={index}>
                             <Tooltip 
                                 showArrow content="username" 
                                 className="text-xs text-slate-600 bg-white" 
@@ -33,12 +38,14 @@ export const OnlineUsersPanel: React.FC = () => {
                                 placement="top-start"
                                 offset={12}
                                 shadow="lg"
+                                closeDelay={0}
                             >
                                 <Avatar 
                                     src={item} 
                                     className="cursor-pointer"
                                     classNames={{
                                         base: "data-[hover=true]:translate-x-0 data-[hover=true]:scale-110",
+                                        
                                     }}
                                 />
                             </Tooltip>
