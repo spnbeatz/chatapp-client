@@ -10,19 +10,20 @@ import { AvatarBadge } from "../avatarBadge";
 export const ConversationListItem:React.FC<LastMessage> = ({id, message, user}) => {
 
     return (
-/*         <div className="items-center justify-between flex flex-row w-full gap-2 duration-300 bg-transparent hover:bg-neutral-100 dark:hover:bg-neutral-800 h-16 p-2 rounded-md hover:shadow-black cursor-pointer"> */
+
         <div>
 
-            <div className="flex flex-row items-center justify-start gap-2">
+            <div className="flex flex-row items-start justify-start gap-4 py-2">
                 <AvatarBadge {...user} />
-                <div className="flex flex-col items-start justify-center">
+                <div className="flex flex-col items-start justify-start">
                     <p className="dark:text-gray-300 text-gray-300 text-sm font-semibold">{user.username}</p>
-                    <p className="text-gray-300 dark:text-gray-200 text-xs">{message.length > 15 ? message.slice(0, 15) + "..." : message} {/* {formatDate(lastMessageProps.timescamp, "chat")} */}</p>
+                    <p className="text-gray-300 dark:text-gray-200 text-xs break-words whitespace-break-spaces text-start">{message}</p>
+                    <p className="text-xs text-gray-300">- {formatDate("2024-06-14T12:34:56", "chat")} -</p>
                 </div>
             </div>
             <p className="text-gray-500 text-tiny"></p>
 
         </div>
-/*         </div> */
+
     )
 }

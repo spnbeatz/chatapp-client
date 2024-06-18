@@ -4,6 +4,7 @@ import { Badge } from "@nextui-org/badge";
 import {Tooltip} from "@nextui-org/tooltip";
 import { useTranslation } from "react-i18next";
 import { LogoWebComponent } from "react-ionicons";
+import { SidebarProfile } from "./sidebarProfile";
 
 export const OnlineUsersPanel: React.FC = () => {
 
@@ -56,6 +57,7 @@ export const OnlineUsersPanel: React.FC = () => {
 
                 
             </AvatarGroup>
+            <SidebarProfile/>
         </div>
     )
 }

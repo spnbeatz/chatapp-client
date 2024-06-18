@@ -86,7 +86,7 @@ export const ChatPanel = ({message}: {message: string}) => {
                 height: "97%"
             }}
             >
-            <div className="flex flex-row w-full justify-between px-5 items-center bg-black py-4 h-10">
+            <div className="flex flex-row w-full justify-between px-5 items-center bg-black h-10">
                 <div className="flex flex-row justify-center items-center gap-4">
                     {interlocutor && <AvatarBadge {...interlocutor} size={25}/>}
                     <p className="text-white text-sm font-normal cursor-pointer hover:underline">
