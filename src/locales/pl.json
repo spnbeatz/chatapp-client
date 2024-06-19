@@ -12,6 +12,8 @@
     "messages": {
         "onlinePanelTitle": "Dotępni",
         "messagesPanelTitle": "Czaty",
+        "groupsPanelTitle": "Grupy",
+        "savedMessagesPanelTitle": "Zapisane wiadomości",
         "messagesPanel": {
             "messagesReadTrueTooltip": "Nie nieprzeczytanych wiadomości",
             "messagesReadFalseTooltip": "Oznacz wszystkie jako przeczytane"
@@ -25,6 +27,10 @@
             "sendImageTooltip": "Wyślij zdjęcie",
             "sendGiftTooltip": "Wyślij prezent",
             "likeTooltip": "Wyślij lajka"
+        },
+        "savedMessagesPanel": {
+            "messagesVisibilityTrue": "Kliknij by ukryć wiadomości",
+            "messagesVisibilityFalse": "Kliknij by pokazać wiadomości"
         }
     },
     "notifications": {

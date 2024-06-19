@@ -11,6 +11,7 @@ import {Image} from "@nextui-org/image";
 import Conv from '../assets/conv.json';
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
+import { Panel } from "./panel";
 
 interface Interlocutor {
     username: string,
@@ -80,20 +81,17 @@ export const ChatPanel = ({message}: {message: string}) => {
     const exampleUser = {id: "1", avatar: "https://i.pravatar.cc/150?u=a04258a2462d826712d", username: "patryk"}
 
     return (
-        <div 
-            className="w-full mt-4 rounded-md overflow-hidden shadow-medium flex flex-col blurred-black-lighter"
-            style={{
-                height: "97%"
-            }}
-            >
-            <div className="flex flex-row w-full justify-between px-5 items-center bg-black h-10">
-                <div className="flex flex-row justify-center items-center gap-4">
-                    {interlocutor && <AvatarBadge {...interlocutor} size={25}/>}
-                    <p className="text-white text-sm font-normal cursor-pointer hover:underline">
-                        {interlocutor?.username}
-                    </p>
-                </div>
-                <div className="flex flex-row justify-center items-center gap-4">
+        <Panel
+            className="pt-2"
+            height="97%"
+            titleIcon={interlocutor && <AvatarBadge {...interlocutor} size={25}/>}
+            title={
+                <p className="text-white text-sm font-normal cursor-pointer hover:underline">
+                    {interlocutor?.username}
+                </p>
+            }
+            endContent={
+                <>
                     <div className="hover:scale-125 duration-250">
                         <Call width={"15px"} height={"15px"} color="rgb(200,200,200)"/>
                     </div>
@@ -103,15 +101,10 @@ export const ChatPanel = ({message}: {message: string}) => {
                     <div className="hover:scale-125 duration-250">
                         <Settings width={"15px"} height={"15px"} color="rgb(200,200,200)"/>
                     </div>
-
-                    
-                    
-                </div>
-            </div>
-            <div 
-                className="flex flex-col justify-between items-center h-full relative"
-                
-            >
+                </>
+            }
+        >
+            <div className="flex flex-col justify-between items-center h-full relative">
                 <div className="flex flex-col-reverse justify-start items-center h-full w-full overflow-y-scroll scrollbar2">
 
                 </div>
@@ -135,9 +128,7 @@ export const ChatPanel = ({message}: {message: string}) => {
                             />
 
                         </div>
-
                     </div>
-
                     )
                 }
                 <form className="flex flex-row justify-between w-full px-4 gap-3 items-center blurred-black-darker">
@@ -164,6 +155,7 @@ export const ChatPanel = ({message}: {message: string}) => {
                 </form>
 
             </div>
-        </div>
+        </Panel>
+
     )
 }

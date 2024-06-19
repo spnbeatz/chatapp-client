@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { ConversationListItem } from "./Conversation/conversationListItem";
+import { MessageItem } from "./messageItem";
 import { LastMessage } from "./Conversation/interface";
 import { Button } from "@nextui-org/button";
 import { useTranslation } from "react-i18next";
@@ -8,6 +8,8 @@ import { SearchIcon } from "./icons";
 import { PersonAdd, Chatbubbles,MailUnread, Mail } from "react-ionicons";
 import { Tooltip } from "@nextui-org/tooltip";
 import { AddNewFriend } from "./addNewFriend";
+import { Panel } from "./panel";
+import { SearchInput } from "./searchInput";
 
 export const MessagesPanel = ({setPickedMessage}: {setPickedMessage: React.Dispatch<React.SetStateAction<string>>}) => {
 
@@ -24,36 +26,11 @@ export const MessagesPanel = ({setPickedMessage}: {setPickedMessage: React.Dispa
 
     const [ allMailsRead, setMailsRead ] = useState<boolean>(false);
 
-
-    const searchInput = (
-        <Input
-          aria-label="Search"
-          classNames={{
-            inputWrapper: "blurred-black-darker rounded-md hover:blurred-black-lighter dark:hover:blurred-black-lighters",
-            input: "text-sm ",
-            base: "w-full"
-          }}
-          
-          labelPlacement="outside"
-          placeholder={t('navbar.searchInputPlaceholder')}
-          startContent={
-            <SearchIcon className="text-base text-default-400 pointer-events-none flex-shrink-0" />
-          }
-
-          type="search"
-        />
-      );
-
     return (
-        <div className="w-1/5 overflow-hidden shadow-medium flex flex-col pb-4 blurred-black h-1/2 mt-4 rounded-md gap-2">
-            <div className="flex flex-row justify-between items-center w-full h-10 px-4 bg-black">
-                <div className="flex flex-row justify-center items-center gap-2">
-                    <Chatbubbles width={"15px"} height={"15px"} color={"rgb(200,200,200)"}/>
-                    <p className="text-gray-300 text-smfont-semibold pink-gradient">
-                        {t('messages.messagesPanelTitle')}
-                    </p>
-                </div>
-                <div className="flex flex-row justify-center items center gap-3 h-full py-2">
+        <Panel
+            className="h-1/2 pb-2"
+            endContent={
+                <div className="flex flex-row justify-center items-center gap-3 h-full py-2">
                     <AddNewFriend />
                     <Tooltip 
                         content={
@@ -76,26 +53,30 @@ export const MessagesPanel = ({setPickedMessage}: {setPickedMessage: React.Dispa
                     </button>
                     </Tooltip>
                 </div>
-
-            </div>
-
+            }
+            titleIcon={<Chatbubbles width={"15px"} height={"15px"} color={"rgb(200,200,200)"}/>}
+            title={t('messages.messagesPanelTitle')}
+        >
+            <>
             <div className="flex flex-row items-center justify-between px-2">
-                {searchInput}
+                <SearchInput />
             </div>
             <div className="w-full px-1 overflow-y-scroll scrollbar-hide">
                 {messages.map((item: LastMessage) => {
                     return (
                         <Button 
-                            className="items-center justify-between flex flex-row w-full gap-2 duration-300 bg-transparent h-auto p-2 rounded-md cursor-pointer conv-list-item"
+                            className="items-center justify-between mt-1 flex flex-row w-full gap-2 duration-300 h-auto p-2 rounded-md cursor-pointer bg-black/20 hover:bg-white/10"
                             onClick={()=>setPickedMessage(item.id)}
                             key={item.id}
                         >
-                            <ConversationListItem {...item}/>
+                            <MessageItem {...item}/>
                         </Button>
 
                     )
                 })}
             </div>
-        </div>
+            </>
+        </Panel>
+
     )
 }

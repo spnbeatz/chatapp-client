@@ -12,6 +12,8 @@
     "messages": {
         "onlinePanelTitle": "Online",
         "messagesPanelTitle": "Chats",
+        "groupsPanelTitle": "Groups",
+        "savedMessagesPanelTitle": "Saved Messages",
         "messagesPanel": {
             "messagesReadTrueTooltip": "No new messages to read.",
             "messagesReadFalseTooltip": "Click here to set your messages as read."
@@ -26,6 +28,10 @@
             "sendImageTooltip": "Send an image",
             "sendGiftTooltip": "Send a gift",
             "likeTooltip": "Send a like"
+        },
+        "savedMessagesPanel": {
+            "messagesVisibilityTrue": "Click to hide your saved messages",
+            "messagesVisibilityFalse": "Click to show your saved messages"
         }
     },
     "notifications": {

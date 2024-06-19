@@ -1,8 +1,4 @@
-import { Link } from "@nextui-org/link";
-
-import { Navbar } from "@/components/navbar";
 import { SideBar } from "@/components/sidebar";
-import { ThemeSwitch } from "@/components/theme-switch";
 
 export default function DefaultLayout({
   children,
@@ -11,10 +7,9 @@ export default function DefaultLayout({
 }) {
   return (
     <div className="relative flex flex-col h-screen bg-background">
-{/*       <Navbar /> */}
       <div className="flex flex-row justify-start relative h-full">
-{/*         <SideBar /> */}
-        <main className="mx-auto w-full flex-grow h-full">
+        <SideBar />
+        <main className="mx-auto w-full flex-grow h-full px-4">
           {children}
         </main>
       </div>
